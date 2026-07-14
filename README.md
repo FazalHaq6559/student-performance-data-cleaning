@@ -1,82 +1,140 @@
-# student-performance-data-cleaning
-This project is part of the **Google Data Analytics Certificate**. It focuses on cleaning real-world student performance data from two public high schools in Portugal: **Gabriel Pereira (GP)** and **Mouzinho da Silveira (MS)**. The goal is to prepare the dataset for analysis to help the superintendent understand what factors influence student academic performance.
+# Student Performance Data Cleaning in Excel
 
-## 🎯 Objective
+## Project Overview
 
-To clean and prepare the dataset by:
-- Removing invalid or incorrect entries (e.g., age above the legal limit)
-- Filling in missing values (e.g., unknown reasons for school selection)
-- Converting text data into numerical format (for statistical analysis)
-- Making the dataset ready for data-driven decision-making
+This project demonstrates fundamental data cleaning techniques in Microsoft Excel using a real-world student performance dataset from two Portuguese public high schools: **Gabriel Pereira (GP)** and **Mouzinho da Silveira (MS)**.
 
-
-## 🧰 Tools Used
-
-- ✅ **Google Sheets** for data cleaning
-- ✅ **Sorting** and **Filtering** for identifying errors
-- ✅ **Find and Replace** for transforming text to numbers
-- ✅ **Fill Handle** for completing missing values
+The project was completed as part of the **Google Data Analytics Certificate** and focuses on improving data quality before analysis. The cleaning process ensures the dataset is accurate, consistent, and suitable for further statistical analysis and visualization.
 
 ---
 
-## ✅ Cleaning Steps Overview
+## Dataset
 
-### 1. **Sorted Data**
-- Sorted by `school` (A–Z) and then by `age` (Z–A)
-- Identified students with ages over 19 (not valid for high school)
+The dataset contains demographic, social, family, and academic information about secondary school students.
 
-### 2. **Filtered and Removed Invalid Ages**
-- Applied filter to `age` column
-- Removed 9 rows with age 20, 21, or 22 (7 from GP, 2 from MS)
-- Retained students aged **15–19** only
-
-### 3. **Filled in Missing Data (reason)**
-- Filtered `reason` column to show only blank values
-- Replaced all blank values with `"none_given"` using the **fill handle**
-
-### 4. **Converted Parent Education Levels to Numbers**
-Mapped `Medu` and `Fedu` values as follows:
-
-| Text Description         | Numeric Value |
-|--------------------------|----------------|
-| none                     | 0              |
-| primary education        | 1              |
-| 5th to 9th grade         | 2              |
-| secondary education      | 3              |
-| higher education         | 4              |
-
-- Used **Find & Replace** in Google Sheets to convert values
-- Ensured both columns (`Medu`, `Fedu`) now contain numbers only
+The primary objective of this project is to prepare the data for analysis by identifying data quality issues and applying appropriate cleaning techniques.
 
 ---
 
-## 📈 Final Outcome
+## Project Objectives
 
-- The dataset is now clean, consistent, and ready for analysis.
-- Valid ages (15–19), complete `reason` values, and numeric formats for parental education are in place.
-- This prepares the data for deeper analysis on what influences student grades.
+The data cleaning process was performed to:
 
----
-
-## 📦 Files for Review
-
-- [`student_data_cleaned.csv`](./data/student_data_cleaned.csv) — Final cleaned dataset
-- [`cleaning_summary.md`](./reports/cleaning_summary.md) — All cleaning steps and logic
-- Screenshots folder (optional) — Visual documentation of cleaning steps
+- Identify and remove invalid records
+- Handle missing values
+- Standardize categorical variables
+- Convert text values into numeric representations where appropriate
+- Improve overall data consistency and reliability for analysis
 
 ---
 
-## 📌 Next Steps (optional for future work)
+## Tools Used
 
-- Perform exploratory data analysis (EDA)
-- Run correlation or regression to find links between grades and factors
-- Share visual insights with school leadership
+- Microsoft Excel
+- Sorting
+- Filtering
+- Find and Replace
+- Fill Handle
 
 ---
 
-## 🧑‍🏫 Author
+## Data Cleaning Process
 
-**Fazal Haq**  
-Data Analyst | Google Data Analytics Certificate Learner  
-🇵🇰 Pakistan
+### 1. Data Validation
 
+The dataset was sorted by **school** and **age** to identify records containing unrealistic age values.
+
+**Actions Performed:**
+
+- Sorted the dataset by `school` (A–Z) and `age` (Z–A).
+- Identified records where student age exceeded the valid high school age range.
+- Removed **9 invalid records** (ages 20–22).
+- Retained only students aged **15–19 years**.
+
+---
+
+### 2. Handling Missing Values
+
+The **reason** column contained missing values representing the student's reason for choosing a school.
+
+**Actions Performed:**
+
+- Filtered the `reason` column to identify blank cells.
+- Replaced missing values with `none_given`.
+- Used Excel's **Fill Handle** to populate the missing entries consistently.
+
+---
+
+### 3. Standardizing Categorical Data
+
+The parental education columns (`Medu` and `Fedu`) originally contained descriptive text values.
+
+To make the dataset suitable for quantitative analysis, these values were encoded numerically.
+
+| Education Level | Encoded Value |
+|-----------------|--------------:|
+| none | 0 |
+| primary education | 1 |
+| 5th to 9th grade | 2 |
+| secondary education | 3 |
+| higher education | 4 |
+
+**Actions Performed:**
+
+- Converted text categories into numeric values using **Find and Replace**.
+- Verified that both `Medu` and `Fedu` contained only numeric values after transformation.
+
+---
+
+## Data Quality Improvements
+
+After cleaning, the dataset:
+
+- Contains only valid student records.
+- Has no missing values in the `reason` column.
+- Uses standardized numeric values for parental education.
+- Is consistent and ready for statistical analysis and visualization.
+
+---
+
+## Project Files
+
+| File | Description |
+|------|-------------|
+| `student_data_cleaned.csv` | Cleaned dataset |
+| `cleaning_summary.md` | Documentation of the data cleaning process |
+| `screenshots/` | Optional screenshots demonstrating the cleaning workflow |
+
+---
+
+## Skills Demonstrated
+
+- Data Cleaning
+- Data Validation
+- Missing Value Handling
+- Data Standardization
+- Categorical Data Encoding
+- Data Quality Assessment
+- Microsoft Excel
+
+---
+
+## Future Work
+
+The cleaned dataset can be used for:
+
+- Exploratory Data Analysis (EDA)
+- Data Visualization
+- Correlation Analysis
+- Regression Modeling
+- Student Performance Analysis
+
+---
+
+## Author
+
+**Fazal Haq**
+
+Aspiring Data Analyst | Google Data Analytics Certificate Learner
+
+Pakistan
